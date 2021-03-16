@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then
+  RunMode="GBB"
+  speed=4
+elif [ $1 == "GBB" ] 
+then
+  RunMode="GBB"
+  speed=4
+elif [ $1 == "ESNA" ]
+then
+  RunMode="ESNA"
+  speed=6
+else
+  echo Unknown mode $1
+  exit -1
+fi
+echo Starting in $RunMode mode
+export speedflag=-s
+if [ -e /dev/ttyUSB0 ];
+then
+  sudo slcand -o -c -f $speedflag$speed /dev/ttyUSB0 slcan0;
+  echo "Starting slcan0 on ttyUSB0 at $speed";
+  sleep 2
+  sudo ifconfig slcan0 up
+elif [ -e /dev/ttyUSB1 ];
+then
+  sudo slcand -o -c -f $speedflag$speed /dev/ttyUSB1 slcan0;
+  echo "Starting slcan0 on ttyUSB1i at $speed";
+  sleep 2
+  sudo ifconfig slcan0 up
+else
+  echo "Could not find a ttyUSB device in /dev"
+fi
+

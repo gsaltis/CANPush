@@ -1,0 +1,14 @@
+[Unit]
+Description=SLCAN Device
+After=network.target
+
+[Service]
+ExecStart=/bin/sh -c /home/pi/Source/GBBCANMon/slcan_add
+WorkingDirectory=/home/pi/Source/GBBCANMon
+StandardOutput=inherit
+StandardError=inherit
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+

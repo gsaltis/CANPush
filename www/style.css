@@ -1,0 +1,75 @@
+:root {
+    --GeneralBorder                     : solid 1px #000;
+    --GeneralBackgroundMedium           : #DDD;
+    --GeneralBackgroundMediumDark       : #CCC;
+    --GeneralBackgroundDark             : #AAA;
+    --GeneralFontColor                  : #222;
+}
+
+#MainBody {
+    position                            : absolute;
+    top                                 : 10px;
+    left                                : 10px;
+    right                               : 10px;
+    top                                 : 10px;
+    bottom                              : 30px;
+    background                          : #FBFCFC;
+    border-radius                       : 15px;
+}
+
+#MainArea {
+    position                            : absolute;
+    top                                 : 00px;
+    left                                : 00px;
+    right                               : 00px;
+    top                                 : 80px;
+    border-bottom                       : var(--GeneralBorder);
+    border-left                         : var(--GeneralBorder);
+    border-right                        : var(--GeneralBorder);
+    bottom                              : 10PX;
+    background                          : #FBFCFC;
+}
+
+#MainHeader {
+    position                            : absolute;
+    top                                 : 0px;
+    height                              : 80px;
+    left                                : 0px;
+    right                               : 0px;
+    background                          : #888;
+    border-top-right-radius             : 15px;
+    border-top-left-radius              : 15px;
+    box-shadow                          : 0px 3px 8px rgb(0, 0, 0, .6);
+}
+
+#MainMessageArea {
+    position                            : absolute;
+    height                              : 20px;
+    bottom                              : 5px;
+    left                                : 10px;
+    right                               : 10px;
+    border                              : var(--GeneralBorder);
+    color                               : var(--GeneralFontColor);
+    font-family                         : Segoe UI;
+    font-size                           : 11pt;
+    font-weight                         : 600;
+    padding-left                        : 5px;
+}
+
+.MessageError {
+    color                               : #800;
+}
+
+.MessageNormal {
+    color                               : var(--GeneralFontColor);
+}
+
+#MainBlocker {
+    position                            : absolute;
+    left                                : 10px;
+    top                                 : 10px;
+    right                               : 10px;
+    bottom                              : 30px;
+    background                          : #000000;
+    opacity                             : .5
+}
